@@ -13,3 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleMenu() {
     document.querySelector(".nav-links").classList.toggle("show");
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1, // Only one image at a time
+        loop: true,
+        autoplay: {
+            delay: 3000, // Auto-slide every 3s
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+});

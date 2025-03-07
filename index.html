@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeylia Game & Token</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
+
 <body>
     <header id="hero">
         <nav class="navbar">
-            <div class="logo">Zeylia</div>
+            <div class="logo"> <img src="assets/logo.png" alt="Zeylia Logo"></div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#tokenomics">Tokenomics</a></li>
@@ -24,17 +31,34 @@
                 <span></span>
             </div>
         </nav>
-        <div class="hero-content">
-            <h1>Welcome to Zeylia</h1>
-            <p>The future of gaming and blockchain combined</p>
-            <button onclick="learnMore()">Join Now</button>
-        </div>
+
     </header>
-    
-    
+    <div class="hero-content">
+        <h1>Welcome to Zeylia</h1>
+        <p>The future of gaming and blockchain combined</p>
+        <button onclick="learnMore()">Join Now</button>
+    </div>
+
+
 
     <section id="threeDModel">
-        <canvas id="gameCanvas"></canvas>
+        <div class="slider-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/s1.jpg" alt="Image 1"></div>
+                    <div class="swiper-slide"><img src="assets/s2.jpg" alt="Image 2"></div>
+                    <div class="swiper-slide"><img src="assets/s3.jpg" alt="Image 3"></div>
+                    <div class="swiper-slide"><img src="assets/s4.jpg" alt="Image 4"></div>
+                </div>
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Pagination Dots -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        
+        <!-- <canvas id="gameCanvas"></canvas> -->
     </section>
 
     <section id="about">
@@ -64,4 +88,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
