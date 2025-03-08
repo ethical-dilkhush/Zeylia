@@ -1,0 +1,112 @@
+/* Typing Animation for Header */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Fade & Slide Animation for Paragraph */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Fade & Scale Animation */
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header Animation */
+.animation-1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    line-height: 1.2;
+    animation: typing 1s steps(30, end) forwards;
+}
+
+/* Paragraph Animation */
+.animation-2 {
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fadeSlide 0.8s ease-in-out forwards;
+    animation-delay: 1s;
+    line-height: 1.4;
+}
+
+/* Button Animation */
+.animation-3 {
+    font-size: 16px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    color: white;
+    border-radius: 30px;
+    opacity: 0;
+    animation: fadeScale 0.6s ease-in-out forwards;
+    animation-delay: 1.5s;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Button Hover Effect */
+.animation-3:hover {
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE STYLING */
+
+/* Tablet Screens */
+@media screen and (max-width: 1024px) {
+    .animation-1 {
+        font-size: 1.5rem;
+    }
+
+    .animation-2 {
+        font-size: 1.2rem;
+    }
+
+    .animation-3 {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 768px) {
+    .animation-1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .animation-2 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .animation-3 {
+        font-size: 13px;
+        display: block;
+        margin: 10px auto;
+    }
+}

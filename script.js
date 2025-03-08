@@ -18,10 +18,11 @@ function toggleMenu() {
 
 document.addEventListener("DOMContentLoaded", function () {
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1, // Only one image at a time
+        slidesPerView: 1,
         loop: true,
+
         autoplay: {
-            delay: 3000, // Auto-slide every 3s
+            delay: 3000,
             disableOnInteraction: false,
         },
         pagination: {
@@ -29,8 +30,20 @@ document.addEventListener("DOMContentLoaded", function () {
             clickable: true,
         },
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".custom-prev",
+            prevEl: ".custom-next",
         },
+    });
+
+    // Toggle Button Animation
+    document.querySelectorAll(".toggle-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            this.classList.toggle("active");
+            if (this.classList.contains("active")) {
+                this.textContent = "Toggled On";
+            } else {
+                this.textContent = "Toggle Me";
+            }
+        });
     });
 });

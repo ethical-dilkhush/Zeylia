@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeylia Game & Token</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- Swiper JS -->
@@ -16,7 +18,7 @@
 <body>
     <header id="hero">
         <nav class="navbar">
-            <div class="logo"> <img src="assets/logo.png" alt="Zeylia Logo"></div>
+            <div class="logo"> <a href="#" class="text-logo">$ZEYLIA</a></div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#tokenomics">Tokenomics</a></li>
@@ -34,32 +36,64 @@
 
     </header>
     <div class="hero-content">
-        <h1>Welcome to Zeylia</h1>
-        <p>The future of gaming and blockchain combined</p>
-        <button onclick="learnMore()">Join Now</button>
+        <h1 class="animation-1">Welcome to ZEYLIA<br> The Future of Gaming Awaits!</h1>
+        <p class="animation-2">Step into the world of Zeylia, where power, strategy, and skill define your destiny. </p>
+        <button class="animation-3" onclick="learnMore()">White Paper</button>
+    </div>
+    <div class="slider-container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/images/s1.jpg" alt="Image 1">
+                    <div class="slide-content">
+                        <h1 class="typing-text">Enter the Ultimate Battleground of the Future</h1>
+                        <p class="subtext">Engage in high-intensity combat, master powerful weapons, and dominate your
+                            enemies.</p>
+                        <button class="toggle-btn">Discover Now</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/s2.jpg" alt="Image 2">
+                    <div class="slide-content">
+                        <h1 class="typing-text">Unleash Your Skills in a World Without Limits</h1>
+                        <p class="subtext">Explore vast open worlds, complete thrilling missions, and forge your legend.
+                        </p>
+                        <button class="toggle-btn">Discover Now</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/s3.jpg" alt="Image 3">
+                    <div class="slide-content">
+                        <h1 class="typing-text">Team Up. Conquer. Rule the Arena</h1>
+                        <p class="subtext">Form alliances, strategize with teammates, and rise to the top of the
+                            leaderboard</p>
+                        <button class="toggle-btn">Discover Now</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/s4.jpg" alt="Image 4">
+                    <div class="slide-content">
+                        <h1 class="typing-text">The Future of Gaming Starts Here</h1>
+                        <p class="subtext">Next-gen graphics, immersive gameplay, and an experience like never before.
+                        </p>
+                        <button class="toggle-btn">Discover Now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Arrows -->
+            <button class="custom-prev"><span>←</span></button>
+            <button class="custom-next"><span>→</span></button>
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination"></div>
+        </div>
     </div>
 
 
 
-    <section id="threeDModel">
-        <div class="slider-container">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="assets/s1.jpg" alt="Image 1"></div>
-                    <div class="swiper-slide"><img src="assets/s2.jpg" alt="Image 2"></div>
-                    <div class="swiper-slide"><img src="assets/s3.jpg" alt="Image 3"></div>
-                    <div class="swiper-slide"><img src="assets/s4.jpg" alt="Image 4"></div>
-                </div>
-                <!-- Navigation Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <!-- Pagination Dots -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-        
-        <!-- <canvas id="gameCanvas"></canvas> -->
-    </section>
+
+
+
+
 
     <section id="about">
         <h2>About Zeylia</h2>
