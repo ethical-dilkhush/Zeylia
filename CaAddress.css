@@ -1,0 +1,156 @@
+/* Container */
+.container {
+    display: flex;
+    flex-direction: row; /* Default: Image on Left, Text on Right */
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #ff0000, #ffbb44);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    width: 93%; /* Maintain width */
+    max-width: 1165px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+/* Image */
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: auto;
+}
+
+/* Text Content */
+.content {
+    flex: 1;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.badge {
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.content p {
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.wallet {
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.wallet img {
+    width: 16px;
+    cursor: pointer;
+}
+
+.buy-btn {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.buy-btn span {
+    color: blue;
+}
+
+/* ✅ Responsive for Tablets (1024px and below) */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stack image on top */
+        text-align: center;
+        padding: 30px;
+        width: 95%;
+    }
+
+    .image-container {
+        order: -1; /* Move image to top */
+        width: 100%;
+        text-align: center;
+    }
+
+    .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ✅ Responsive for Mobile (768px and below) */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 96%;
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .wallet,
+    .buy-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Copy Icon */
+.copy-icon {
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.copied {
+    color: green;
+}

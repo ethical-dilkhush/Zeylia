@@ -1,0 +1,8 @@
+.about {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically if needed */
+    text-align: left; /* Ensure text is centered */
+    width: 80%; /* Ensure it takes full width */
+    margin: 20px auto; /* Center in the container */
+}

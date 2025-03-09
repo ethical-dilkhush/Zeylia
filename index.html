@@ -3,124 +3,168 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeylia Game & Token</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Zeylia</title>
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./heroSection.css">
+    <link rel="stylesheet" href="./Swipersilder.css">
+    <link rel="stylesheet" href="./pagination.css">
+    <link rel="stylesheet" href="./CaAddress.css">
+    <link rel="stylesheet" href="./body.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+        integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
 </head>
 
 <body>
-    <header id="hero">
-        <nav class="navbar">
-            <div class="logo"> <a href="#" class="text-logo">$ZEYLIA</a></div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#tokenomics">Tokenomics</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-                <li><a href="#partners">Partners</a></li>
-                <li><a href="#nft-marketplace">NFTs</a></li>
-                <li><a href="#team">Team</a></li>
-            </ul>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
 
-    </header>
-    <div class="hero-content">
-        <h1 class="animation-1">Welcome to ZEYLIA<br> The Future of Gaming Awaits!</h1>
-        <p class="animation-2">Step into the world of Zeylia, where power, strategy, and skill define your destiny. </p>
-        <button class="animation-3" onclick="learnMore()">White Paper</button>
-    </div>
-    <div class="slider-container">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="assets/images/s1.jpg" alt="Image 1">
-                    <div class="slide-content">
-                        <h1 class="typing-text">Enter the Ultimate Battleground of the Future</h1>
-                        <p class="subtext">Engage in high-intensity combat, master powerful weapons, and dominate your
-                            enemies.</p>
-                        <button class="toggle-btn">Discover Now</button>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/images/s2.jpg" alt="Image 2">
-                    <div class="slide-content">
-                        <h1 class="typing-text">Unleash Your Skills in a World Without Limits</h1>
-                        <p class="subtext">Explore vast open worlds, complete thrilling missions, and forge your legend.
-                        </p>
-                        <button class="toggle-btn">Discover Now</button>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/images/s3.jpg" alt="Image 3">
-                    <div class="slide-content">
-                        <h1 class="typing-text">Team Up. Conquer. Rule the Arena</h1>
-                        <p class="subtext">Form alliances, strategize with teammates, and rise to the top of the
-                            leaderboard</p>
-                        <button class="toggle-btn">Discover Now</button>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/images/s4.jpg" alt="Image 4">
-                    <div class="slide-content">
-                        <h1 class="typing-text">The Future of Gaming Starts Here</h1>
-                        <p class="subtext">Next-gen graphics, immersive gameplay, and an experience like never before.
-                        </p>
-                        <button class="toggle-btn">Discover Now</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Navigation Arrows -->
-            <button class="custom-prev"><span>←</span></button>
-            <button class="custom-next"><span>→</span></button>
-            <!-- Pagination Dots -->
-            <div class="swiper-pagination"></div>
+    <nav>
+        <div class="logo">
+            <h1>ZEYLIA</h1>
         </div>
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+        <ul class="mainMenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+            <div class="closeMenu"><i class="fa fa-times"></i></div>
+            <span class="icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-github"></i>
+            </span>
+        </ul>
+    </nav>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <img src="./images/1.jpg" />
+                <div class="slide-content">
+                    <h2 class="slide-heading">Explore the Future of Gaming </h2>
+                    <p class="slide-text">Immerse yourself in high-intensity battles and breathtaking environments.</p>
+                    <button class="discover-btn">Discover Now<i class="bi bi-arrow-up-right-circle-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <img src="./images/2.jpg" />
+                <div class="slide-content">
+                    <h2 class="slide-heading">Unleash Your Potential</h2>
+                    <p class="slide-text">Experience next-gen graphics and realistic gameplay like never before.</p>
+                    <button class="discover-btn">Discover Now<i class="bi bi-arrow-up-right-circle-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+                <img src="./images/3.jpg" />
+                <div class="slide-content">
+                    <h2 class="slide-heading">Lead Your Team to Victory</h2>
+                    <p class="slide-text">Strategize, execute, and dominate in multiplayer arenas.</p>
+                    <button class="discover-btn">Discover Now<i class="bi bi-arrow-up-right-circle-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+                <img src="./images/4.jpg" />
+                <div class="slide-content">
+                    <h2 class="slide-heading">The Battle Begins Here</h2>
+                    <p class="slide-text">Step into the action and prove yourself in the ultimate showdown.</p>
+                    <button class="discover-btn">Discover Now <i class="bi bi-arrow-up-right-circle-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+                <img src="./images/5.jpg" />
+                <div class="slide-content">
+                    <h2 class="slide-heading">Adventure Awaits</h2>
+                    <p class="slide-text">Embark on an epic journey through immersive worlds.</p>
+                    <button class="discover-btn">Discover Now <i class="bi bi-arrow-up-right-circle-fill"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slide-next"><i class="bi bi-arrow-right-circle"></i></div>
+        <div class="slide-prev"><i class="bi bi-arrow-left-circle"></i></div>
     </div>
 
+    <!-- Add pagination container outside swiper -->
+    <div class="pagination-container">
+        <div class="swiper-pagination"></div>
+    </div>
 
-
-
-
-
-
-
-    <section id="about">
-        <h2>About Zeylia</h2>
-        <p>Zeylia is a groundbreaking game built on the Base Chain.</p>
+    <!-----Hero Section-->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <img src="images/12.jpg" alt="Beautiful beach landscape" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-heading">Discover Your Next Adventure</h1>
+                <p class="hero-subheading">Explore breathtaking destinations and create unforgettable memories with our
+                    premium
+                    travel experiences.</p>
+                <div class="hero-cta">
+                    <a href="#explore" class="primary-btn">Explore Now <i
+                            class="bi bi-arrow-up-right-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="token">
-        <h2>Zeylia Token</h2>
-        <p>The Zeylia token powers our ecosystem.</p>
-        <button onclick="buyToken()">Buy Zeylia Token</button>
+    <div class="about">
+        <h3>About</h3>
+        <h2>Pomerium Coin Statistic</h2>
+    </div>
+    <!----Here is the ca Address----->
+    <section class="container">
+        <!-- Left Side: Image -->
+        <div class="image-container">
+            <img src="/images/c.png" alt="Coins">
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="content">
+            <h2>Shape the Future with PMG!</h2>
+            <span class="badge"><i class="bi bi-patch-check-fill"></i> Audit</span>
+            <p>
+                Buy PMG to influence Pomerium’s ecosystem and grow your investment as the platform evolves. Get your PMG
+                now!
+            </p>
+
+            <div class="action-buttons">
+                <div class="wallet">
+                    <span value="munna" id="ca">0x073.....d8a2</i></span>
+                    <i class="copy-icon bi bi-copy" onclick="copyToClipboard()"></i>
+                </div>
+                <button class="buy-btn">
+                    Buy Now <span><i class="bi bi-arrow-up-right-circle-fill"></i></span>
+                </button>
+            </div>
+        </div>
     </section>
+    <!----remove after devlop-->
+    <div style="height: 200px; background-color: #f1f1f1;">
 
-    <section id="roadmap">
-        <h2>Roadmap</h2>
-        <p>We have a clear vision for the future.</p>
-    </section>
-
-    <section id="team">
-        <h2>Our Team</h2>
-        <p>Meet the passionate developers behind Zeylia.</p>
-    </section>
-
-    <footer>
-        &copy; 2025 Zeylia. All rights reserved.
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>

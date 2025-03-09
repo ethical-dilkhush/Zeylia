@@ -1,0 +1,39 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Override Swiper's default pagination styles */
+.swiper-pagination {
+    position: static !important; /* Ensure it's part of the normal document flow */
+    width: auto !important; /* Allow the width to be determined by content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for individual pagination bullets */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #666;
+    opacity: 0.5;
+    margin: 0 8px;
+    border-radius: 50%; /* Ensure bullets are circular */
+    transition: all 0.3s ease;
+    cursor: pointer; /* Indicate that bullets are clickable */
+}
+
+/* Style for the active pagination bullet */
+.swiper-pagination-bullet-active {
+    background: #000;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Optional: Add hover effect for better user interaction */
+.swiper-pagination-bullet:hover {
+    opacity: 0.8;
+}
