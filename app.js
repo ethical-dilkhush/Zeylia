@@ -1,25 +1,52 @@
-const mainMenu = document.querySelector('.mainMenu');
-const closeMenu = document.querySelector('.closeMenu');
-const openMenu = document.querySelector('.openMenu');
-const menu_items = document.querySelectorAll('nav .mainMenu li a');
+// const mainMenu = document.querySelector('.mainMenu');
+// const closeMenu = document.querySelector('.closeMenu');
+// const openMenu = document.querySelector('.openMenu');
+// const menu_items = document.querySelectorAll('nav .mainMenu li a');
 
-openMenu.addEventListener('click',show);
-closeMenu.addEventListener('click',close);
+// openMenu.addEventListener('click',show);
+// closeMenu.addEventListener('click',close);
 
-// close menu when you click on a menu item 
-menu_items.forEach(item => {
-    item.addEventListener('click',function(){
-        close();
-    })
-})
+// // close menu when you click on a menu item 
+// menu_items.forEach(item => {
+//     item.addEventListener('click',function(){
+//         close();
+//     })
+// })
 
-function show(){
-    mainMenu.style.display = 'flex';
-    mainMenu.style.top = '0';
-}
-function close(){
-    mainMenu.style.top = '-100%';
-}
+// function show(){
+//     mainMenu.style.display = 'flex';
+//     mainMenu.style.top = '0';
+// }
+// function close(){
+//     mainMenu.style.top = '-100%';
+// }
+
+//Optimized code
+document.addEventListener("DOMContentLoaded", function() {
+    const openMenu = document.querySelector(".openMenu");
+    const closeMenu = document.querySelector(".closeMenu");
+    const mainMenu = document.querySelector(".mainMenu");
+
+    if (openMenu && closeMenu && mainMenu) {
+        // Open menu
+        openMenu.addEventListener("click", () => {
+            mainMenu.classList.add("active");
+        });
+
+        // Close menu
+        closeMenu.addEventListener("click", () => {
+            mainMenu.classList.remove("active");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!mainMenu.contains(e.target) && !openMenu.contains(e.target) && mainMenu.classList.contains("active")) {
+                mainMenu.classList.remove("active");
+            }
+        });
+    }
+});
+
 
 //Sweper Slider and animation start here
 document.addEventListener("DOMContentLoaded", function () {
