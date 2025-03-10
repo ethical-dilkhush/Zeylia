@@ -175,6 +175,7 @@
   .hero-cta {
     flex-direction: column;
     float: left;
+    margin-left: 30%;
   }
 }
 

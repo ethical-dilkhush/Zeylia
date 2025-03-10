@@ -125,7 +125,7 @@
 /* ✅ Responsive for Mobile (768px and below) */
 @media screen and (max-width: 768px) {
     .container {
-        width: 96%;
+        width: 93%;
         padding: 20px;
     }
 

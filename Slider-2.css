@@ -1,0 +1,110 @@
+
+        /* Main Container */
+        .slider-container {
+            /* background-color: #f4f4f4; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        /* Custom Swiper */
+        .custom-swiper {
+            width: 100%;
+            max-width: 1180px;
+        }
+
+        .custom-swiper-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-swiper-slide {
+            background: #4663ac;
+            color: white;
+            border-radius: 25px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+        }
+
+        .custom-swiper-slide.dark {
+            background: #33373f;
+        }
+
+        .custom-swiper-slide h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .custom-swiper-slide p {
+            font-size: 1rem;
+            margin: 10px 0 20px;
+            opacity: 0.9;
+        }
+
+        .custom-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+            width: fit-content;
+            transition: all 0.3s ease;
+        }
+
+        .custom-button:hover {
+            background: white;
+            color: #333;
+        }
+
+        .custom-button i {
+            font-size: 1.2rem;
+        }
+
+        .custom-image {
+            position: relative;
+            bottom: 0;
+            margin: 0px;
+        }
+
+        /* Custom Swiper Pagination */
+        .custom-swiper-pagination {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .custom-swiper-pagination .custom-swiper-bullet {
+            width: 10px;
+            height: 10px;
+            background: #999;
+            margin: 0 5px;
+            border-radius: 50%;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .custom-swiper-pagination .custom-swiper-bullet-active {
+            background: #333;
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 1024px) {
+            .custom-swiper-slide {
+                width: 100%;
+                min-height: auto;
+            }
+        }

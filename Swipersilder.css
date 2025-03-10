@@ -83,12 +83,10 @@
 
 .slide-content {
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 40%;
   color: white;
-  text-align: left;
-  width: 50%;
-  max-width: 800px;
+  text-align: center;
+  width: 100%;
   padding: 1rem;
   z-index: 10;
 }
@@ -160,6 +158,6 @@
     left: 5%;
     width: 90%; 
     max-width: none;
-    text-align:left;
+    text-align:center;
   }
 }

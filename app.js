@@ -21,7 +21,7 @@
 //     mainMenu.style.top = '-100%';
 // }
 
-//Optimized code
+
 document.addEventListener("DOMContentLoaded", function() {
     const openMenu = document.querySelector(".openMenu");
     const closeMenu = document.querySelector(".closeMenu");
@@ -153,3 +153,129 @@ function copyToClipboard() {
         console.error("Failed to copy: ", err);
     });
   }
+
+
+  //slider-2
+  var swiper = new Swiper('.custom-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".custom-swiper-pagination",
+        clickable: true,
+        bulletClass: "custom-swiper-bullet",
+        bulletActiveClass: "custom-swiper-bullet-active",
+    },
+    breakpoints: {
+        1024: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        }
+    }
+});
+
+
+//slider -3
+
+document.addEventListener("DOMContentLoaded", function () {
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    function start3DFlipEffect() {
+        const boxes = document.querySelectorAll(".box");
+        let index = 0;
+        let totalBoxes = boxes.length;
+
+        function updateSlides() {
+            boxes.forEach((box, i) => {
+                let offset = (i - index + totalBoxes) % totalBoxes;
+                let scale = offset === 0 ? 0.8 : 0.5; // Larger center card
+                let translateZ = offset === 0 ? 100 : -100; // Push back side cards
+                let rotateY = offset === 0 ? 0 : offset === 1 ? -15 : 15; // Flip effect
+                let opacity = offset === 0 ? 1 : 0.6; // Highlight active card
+
+                box.style.transform = `perspective(1000px) rotateY(${rotateY}deg) scale(${scale}) translateZ(${translateZ}px)`;
+                box.style.opacity = opacity;
+                box.style.zIndex = offset === 0 ? 2 : 1;
+            });
+
+            index = (index + 1) % totalBoxes; // Cycle through cards
+        }
+
+        document.querySelector(".container-slider").style.perspective = "1200px";
+        updateSlides();
+        setInterval(updateSlides, 3000);
+    }
+
+    function handleResize() {
+        if (isMobile()) {
+            start3DFlipEffect();
+        }
+    }
+
+    if (isMobile()) {
+        start3DFlipEffect();
+    }
+
+    window.addEventListener("resize", handleResize);
+});
+
+
+//video slider
+const carouselWrapper = document.querySelector('.video-carousel-wrapper');
+const prevBtn = document.querySelector('.video-btn-prev');
+const nextBtn = document.querySelector('.video-btn-next');
+const dots = document.querySelectorAll('.video-dot');
+const videos = document.querySelectorAll('.video-carousel-item video');
+
+let index = 1; // Start with second video playing
+let totalVideos = videos.length;
+let interval;
+
+function updateCarousel() {
+    carouselWrapper.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+
+    // Stop all videos and play only the active one
+    videos.forEach(video => video.pause());
+    videos[index].play();
+}
+
+function nextSlide() {
+    index = (index + 1) % totalVideos;
+    updateCarousel();
+}
+
+function prevSlide() {
+    index = (index - 1 + totalVideos) % totalVideos;
+    updateCarousel();
+}
+
+function setAutoSlide() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+}
+
+prevBtn.addEventListener('click', () => {
+    prevSlide();
+    setAutoSlide();
+});
+
+nextBtn.addEventListener('click', () => {
+    nextSlide();
+    setAutoSlide();
+});
+
+dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+        index = parseInt(e.target.dataset.index);
+        updateCarousel();
+        setAutoSlide();
+    });
+});
