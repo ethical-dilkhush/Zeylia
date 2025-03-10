@@ -289,4 +289,4 @@ h3.innerHTML = h3.textContent.replace(/\S/g,"<span class='char'>$&</span>");
 
 // GSAP ANIMATION
 let tl = gsap.timeline({ease: "back"});
-    tl.from('.char',{y:50,opacity: 0, stagger: 0.1})
+    tl.from('.char',{y:50,opacity: 0, stagger: 0.08})
