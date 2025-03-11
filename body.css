@@ -1,8 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+:root {
+    --gaming-font: 'Oxanium', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    padding: 0px;
+    margin: opx;
+    background: url('images/body-bg.jpg');
+    font-family: var(--gaming-font);
+    background-color: #0f0f0f;
+    color: aliceblue;
+    text-transform: uppercase; /* Gives a gaming feel */
+
+  }
 .about {
+  color: aliceblue;
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     justify-content: center; /* Center vertically if needed */
     text-align: left; /* Ensure text is centered */
     width: 80%; /* Ensure it takes full width */
     margin: 20px auto; /* Center in the container */
+}
+.paragraph{
+  line-height: 25px;
+  margin-bottom: 15px;
 }

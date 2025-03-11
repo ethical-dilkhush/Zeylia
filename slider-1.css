@@ -107,7 +107,7 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.discover-btn, .primary-btn {
+.discover-btn, .primary-btn , .action-btn, .game-cta, .community-follow-btn  {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -123,16 +123,16 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.discover-btn:hover, .primary-btn:hover {
+.discover-btn:hover, .primary-btn:hover, .action-btn, .game-cta  {
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
 }
 
-.discover-btn i, .primary-btn i {
+.discover-btn i, .primary-btn, .action-btn, .game-cta  i {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 
-.discover-btn:hover, .primary-btn:hover {
+.discover-btn:hover, .primary-btn:hover, .action-btn:hover , .game-cta:hover{
   transform: scale(1.1);
 }
 
@@ -145,7 +145,7 @@
     font-size: 1rem;
   }
 
-  .discover-btn, .primary-btn {
+  .discover-btn, .primary-btn, .action-btn, .game-cta  {
     font-size: 14px;
     padding: 10px 20px;
   }

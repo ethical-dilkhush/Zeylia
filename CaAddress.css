@@ -4,11 +4,14 @@
     flex-direction: row; /* Default: Image on Left, Text on Right */
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #ff0000, #ffbb44);
+    background: url('images/ca.jpg');
+    background-size: cover; /* Adjusts to cover the whole screen */
+    background-repeat: repeat; /* Repeats the texture */
+    background-blend-mode: overlay; /* Blends with any background color */
     border-radius: 25px;
     padding: 40px;
     text-align: center;
-    color: white;
+    color:black;
     width: 93%; /* Maintain width */
     max-width: 1165px;
     margin: 30px auto;
@@ -65,7 +68,7 @@
 }
 
 .wallet {
-    border: 1px solid white;
+    border: 1px solid black;
     padding: 10px 15px;
     border-radius: 25px;
     display: flex;
@@ -90,6 +93,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    border: 1PX SOLID black;
 }
 
 .buy-btn span {

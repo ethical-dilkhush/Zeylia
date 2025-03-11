@@ -1,28 +1,4 @@
-// const mainMenu = document.querySelector('.mainMenu');
-// const closeMenu = document.querySelector('.closeMenu');
-// const openMenu = document.querySelector('.openMenu');
-// const menu_items = document.querySelectorAll('nav .mainMenu li a');
-
-// openMenu.addEventListener('click',show);
-// closeMenu.addEventListener('click',close);
-
-// // close menu when you click on a menu item 
-// menu_items.forEach(item => {
-//     item.addEventListener('click',function(){
-//         close();
-//     })
-// })
-
-// function show(){
-//     mainMenu.style.display = 'flex';
-//     mainMenu.style.top = '0';
-// }
-// function close(){
-//     mainMenu.style.top = '-100%';
-// }
-
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const openMenu = document.querySelector(".openMenu");
     const closeMenu = document.querySelector(".closeMenu");
     const mainMenu = document.querySelector(".mainMenu");
@@ -57,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             disableOnInteraction: false,
         },
         loop: true,
-        speed:600,
+        speed: 600,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -68,20 +44,20 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         // Add Swiper events for animation control
         on: {
-            init: function() {
+            init: function () {
                 animateSlide(this.slides[this.activeIndex]);
             },
-            slideChangeTransitionStart: function() {
+            slideChangeTransitionStart: function () {
                 // Reset all slides
                 resetAllSlides();
             },
-            slideChangeTransitionEnd: function() {
+            slideChangeTransitionEnd: function () {
                 // Animate the active slide
                 animateSlide(this.slides[this.activeIndex]);
             }
         }
     });
-  
+
     // Function to reset animations for all slides
     function resetAllSlides() {
         const slides = document.querySelectorAll(".swiper-slide");
@@ -89,74 +65,75 @@ document.addEventListener("DOMContentLoaded", function () {
             const heading = slide.querySelector(".slide-heading");
             const text = slide.querySelector(".slide-text");
             const button = slide.querySelector(".discover-btn");
-            
+
             gsap.set([heading, text, button], {
                 opacity: 0,
                 y: 20
             });
         });
     }
-  
+
     // Function to animate the current slide
     function animateSlide(slide) {
         const heading = slide.querySelector(".slide-heading");
         const text = slide.querySelector(".slide-text");
         const button = slide.querySelector(".discover-btn");
-  
+
         // Create a timeline for synchronized animations
         const tl = gsap.timeline();
-  
+
         tl.to(heading, {
             opacity: 1,
             y: 0,
             duration: 0.8,
             ease: "power3.out"
         })
-        .to(text, {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out"
-        }, "-=0.5") // Overlap with heading animation
-        .to(button, {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            ease: "power3.out"
-        }, "-=0.7"); // Overlap with text animation
+            .to(text, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out"
+            }, "-=0.5") // Overlap with heading animation
+            .to(button, {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power3.out"
+            }, "-=0.7"); // Overlap with text animation
     }
-  
+
     // Optional: Pause autoplay on hover
     const swiperContainer = document.querySelector('.mySwiper');
     swiperContainer.addEventListener('mouseenter', () => {
         swiper.autoplay.stop();
     });
-  
+
     swiperContainer.addEventListener('mouseleave', () => {
         swiper.autoplay.start();
     });
-  });
+});
+
 //CA copy function
 function copyToClipboard() {
     let textToCopy = document.getElementById("ca").innerText;
-    
+
     navigator.clipboard.writeText(textToCopy).then(() => {
         let icon = document.querySelector(".copy-icon");
         icon.classList.add("copied"); // Change icon color
         icon.classList.replace("bi-copy", "bi-check-lg"); // Change to checkmark
-  
+
         setTimeout(() => {
-            icon.classList.remove("copied"); 
+            icon.classList.remove("copied");
             icon.classList.replace("bi-check-lg", "bi-copy"); // Revert icon
         }, 2000);
     }).catch(err => {
         console.error("Failed to copy: ", err);
     });
-  }
+}
 
 
-  //slider-2
-  var swiper = new Swiper('.custom-swiper', {
+//slider-2
+var swiper = new Swiper('.custom-swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
@@ -180,49 +157,45 @@ function copyToClipboard() {
 
 
 //slider -3
-
 document.addEventListener("DOMContentLoaded", function () {
     function isMobile() {
         return window.innerWidth <= 768;
     }
 
-    function start3DFlipEffect() {
+    function startSimpleSlider() {
         const boxes = document.querySelectorAll(".box");
         let index = 0;
         let totalBoxes = boxes.length;
 
         function updateSlides() {
             boxes.forEach((box, i) => {
-                let offset = (i - index + totalBoxes) % totalBoxes;
-                let scale = offset === 0 ? 0.8 : 0.5; // Larger center card
-                let translateZ = offset === 0 ? 100 : -100; // Push back side cards
-                let rotateY = offset === 0 ? 0 : offset === 1 ? -15 : 15; // Flip effect
-                let opacity = offset === 0 ? 1 : 0.6; // Highlight active card
-
-                box.style.transform = `perspective(1000px) rotateY(${rotateY}deg) scale(${scale}) translateZ(${translateZ}px)`;
-                box.style.opacity = opacity;
-                box.style.zIndex = offset === 0 ? 2 : 1;
+                box.style.opacity = i === index ? "1" : "0";
+                box.style.transform = i === index ? "scale(1)" : "scale(0.9)";
+                box.style.transition = "opacity 0.5s ease, transform 0.5s ease";
             });
 
-            index = (index + 1) % totalBoxes; // Cycle through cards
+            index = (index + 1) % totalBoxes; // Cycle through slides
         }
 
-        document.querySelector(".container-slider").style.perspective = "1200px";
+        // Initialize
         updateSlides();
-        setInterval(updateSlides, 3000);
+
+        // Auto change slides every 3 seconds
+        const interval = setInterval(updateSlides, 3000);
+
+        // Stop and restart on resize
+        window.addEventListener("resize", () => {
+            clearInterval(interval);
+            if (isMobile()) {
+                startSimpleSlider();
+            }
+        });
     }
 
-    function handleResize() {
-        if (isMobile()) {
-            start3DFlipEffect();
-        }
-    }
-
+    // Start the slider on mobile
     if (isMobile()) {
-        start3DFlipEffect();
+        startSimpleSlider();
     }
-
-    window.addEventListener("resize", handleResize);
 });
 
 
@@ -281,12 +254,28 @@ dots.forEach(dot => {
 });
 
 //text animation
-const h1 = document.querySelector('.hero-heading');
-const h3 = document.querySelector('.hero-subheading');
+const h1 = document.querySelector('.paragraph');
 
-h1.innerHTML = h1.textContent.replace(/\S/g,"<span class='char'>$&</span>");
-h3.innerHTML = h3.textContent.replace(/\S/g,"<span class='char'>$&</span>");
+
+h1.innerHTML = h1.textContent.replace(/\S/g, "<span class='char'>$&</span>");
 
 // GSAP ANIMATION
-let tl = gsap.timeline({ease: "back"});
-    tl.from('.char',{y:50,opacity: 0, stagger: 0.08})
+let tl = gsap.timeline({ ease: "back" });
+tl.from('.char', { y: 50, opacity: 0, stagger: 0.02 })
+
+// Notifications 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const alertOverlay = document.getElementById("alertOverlay");
+    const alertButton = document.getElementById("alertButton");
+
+    // Show the alert message when the page loads
+    setTimeout(() => {
+        alertOverlay.classList.add("active");
+    }, 1000); // Delay for 1 second after page load
+
+    // Hide the alert message when the button is clicked
+    alertButton.addEventListener("click", () => {
+        alertOverlay.classList.remove("active");
+    });
+});

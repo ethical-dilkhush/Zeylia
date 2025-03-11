@@ -1,0 +1,97 @@
+/* Gameplay Features Section */
+.game-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Ensure it takes full width */
+    margin: 20px auto; /* Center in the container */
+    border-radius: 30px;
+  }
+  
+  .game-features-container {
+    width: 90%; /* 90% width for desktop */
+    text-align: center;
+  }
+  
+  .game-features-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white; /* Dark text color */
+  }
+  
+  .game-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 1.5rem; /* Space between cards */
+  }
+  
+  .game-feature-card {
+    background: url('images/card-bg-2.jpg');
+    background-size: cover; /* Adjusts to cover the whole screen */
+    background-repeat: repeat; /* Repeats the texture */
+    background-blend-mode: overlay; /* Blends with any background color */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .game-feature-card video{
+      border: dashed red;
+
+  }
+  
+  .game-feature-card:hover {
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .game-feature-video {
+    width: 100%; /* Full width of the card */
+    height: 200px; /* Fixed height for consistency */
+    border-radius: 10px; /* Rounded corners */
+    object-fit: cover; /* Ensures video covers the area */
+    margin-bottom: 1rem;
+  }
+  
+  .game-feature-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #0f172a, #1e293b, #374151, #4b5563);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+  
+  .game-feature-card-description {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text color */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .game-features {
+      width: 93%; /* 93% width for mobile */
+    }
+  
+    .game-features-grid {
+      grid-template-columns: 1fr; /* Single column for mobile */
+      grid-template-rows: auto; /* Auto rows for mobile */
+    }
+  
+    .game-features-title {
+      font-size: 2rem; /* Smaller font size for mobile */
+    }
+  
+    .game-feature-card-title {
+      font-size: 1.25rem; /* Smaller font size for mobile */
+    }
+  
+    .game-feature-card-description {
+      font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+  
+    .game-feature-video {
+      height: 150px; /* Smaller height for mobile */
+    }
+  }
