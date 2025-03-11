@@ -8,11 +8,13 @@
   margin-bottom: 5px;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 90%;
   left: 50%;
+  padding: 15px;
   transform: translate(-50%, -1%);
+  background: url('images/card-bg-2.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
 }
 
 .hero-background {
@@ -30,8 +32,8 @@
   max-width: 1200px;
   width: 100%;
   padding: 0 20px;
-  color: white;
-  text-align: left;
+  color: #555;
+  text-align: center;
 }
 
 .hero-heading {
@@ -59,7 +61,7 @@
 .hero-cta {
   display: flex;
   gap: 1.5rem;
-  justify-content: left;
+  justify-content: center;
 }
 
 /* Animation Keyframes */
@@ -78,7 +80,7 @@
 
   .hero-section {
     width: 93%;
-    height: 35vh;
+    height: 38vh;
     border-radius: 15px;
     margin-top: 5px;
   }
@@ -88,7 +90,7 @@
   }
 
   .hero-content {
-    text-align: left;
+    text-align: center;
 
   }
 }

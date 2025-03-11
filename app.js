@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const openMenu = document.querySelector(".openMenu");
     const closeMenu = document.querySelector(".closeMenu");
     const mainMenu = document.querySelector(".mainMenu");
+    const menuLinks = document.querySelectorAll(".mainMenu li a"); // Select all menu links
 
     if (openMenu && closeMenu && mainMenu) {
         // Open menu
@@ -19,6 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!mainMenu.contains(e.target) && !openMenu.contains(e.target) && mainMenu.classList.contains("active")) {
                 mainMenu.classList.remove("active");
             }
+        });
+
+        // Close menu when clicking a link and allow navigation
+        menuLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                mainMenu.classList.remove("active");
+
+                // Ensure the link follows its href after closing the menu
+                const targetHref = link.getAttribute("href");
+                if (targetHref && targetHref.startsWith("#")) {
+                    e.preventDefault(); // Prevent default jump behavior
+                    setTimeout(() => {
+                        window.location.href = targetHref;
+                    }, 100); // Delay to ensure menu closes smoothly
+                }
+            });
         });
     }
 });
@@ -194,43 +211,56 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-//video slider
+// Video slider
 const carouselWrapper = document.querySelector('.video-carousel-wrapper');
 const prevBtn = document.querySelector('.video-btn-prev');
 const nextBtn = document.querySelector('.video-btn-next');
 const dots = document.querySelectorAll('.video-dot');
 const videos = document.querySelectorAll('.video-carousel-item video');
 
-let index = 1; // Start with second video playing
+let index = 0; // Start from the first video
 let totalVideos = videos.length;
 let interval;
 
+// Function to update carousel position
 function updateCarousel() {
     carouselWrapper.style.transform = `translateX(${-index * 100}%)`;
+
     dots.forEach(dot => dot.classList.remove('active'));
     dots[index].classList.add('active');
 
-    // Stop all videos and play only the active one
-    videos.forEach(video => video.pause());
-    videos[index].play();
+    // Stop all videos and ensure the current video plays
+    videos.forEach((video, i) => {
+        if (i === index) {
+            video.currentTime = 0; // Reset video time to ensure playback
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
 }
 
+// Function to move to the next slide
 function nextSlide() {
     index = (index + 1) % totalVideos;
     updateCarousel();
 }
 
+// Function to move to the previous slide
 function prevSlide() {
     index = (index - 1 + totalVideos) % totalVideos;
     updateCarousel();
 }
 
+// Function to start auto sliding
 function setAutoSlide() {
     clearInterval(interval);
-    interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    interval = setInterval(() => {
+        nextSlide();
+    }, 5000); // Slide changes every 5 seconds
 }
 
+// Event listeners for next and previous buttons
 prevBtn.addEventListener('click', () => {
     prevSlide();
     setAutoSlide();
@@ -241,13 +271,17 @@ nextBtn.addEventListener('click', () => {
     setAutoSlide();
 });
 
-dots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-        index = parseInt(e.target.dataset.index);
+// Event listeners for dot navigation
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        index = i;
         updateCarousel();
         setAutoSlide();
     });
 });
+
+// Start the auto slide when the page loads
+setAutoSlide();
 
 //text animation
 const h1 = document.querySelector('.paragraph');
