@@ -169,27 +169,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function updateSlides() {
             boxes.forEach((box, i) => {
-                box.style.opacity = i === index ? "1" : "0";
-                box.style.transform = i === index ? "scale(1)" : "scale(0.9)";
-                box.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                if (i === index) {
+                    box.style.display = "block";
+                    box.style.transform = "scale(1)";
+                } else {
+                    box.style.display = "none";
+                    box.style.transform = "scale(0.8)";
+                }
             });
-
-            index = (index + 1) % totalBoxes; // Cycle through slides
+            index = (index + 1) % totalBoxes;
         }
 
         // Initialize
         updateSlides();
 
         // Auto change slides every 3 seconds
-        const interval = setInterval(updateSlides, 3000);
-
-        // Stop and restart on resize
-        window.addEventListener("resize", () => {
-            clearInterval(interval);
-            if (isMobile()) {
-                startSimpleSlider();
-            }
-        });
+        setInterval(updateSlides, 3000);
     }
 
     // Start the slider on mobile
@@ -197,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
         startSimpleSlider();
     }
 });
+
 
 
 //video slider

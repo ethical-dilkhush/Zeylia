@@ -8,6 +8,7 @@
     box-sizing: border-box;
   }
   body{
+    overflow-x: hidden;
     padding: 0px;
     margin: opx;
     background: url('images/body-bg.jpg');
@@ -30,3 +31,9 @@
   line-height: 25px;
   margin-bottom: 15px;
 }
+@media (max-width: 768px) {
+  .about h2{
+    text-align: left;
+  }
+
+  }

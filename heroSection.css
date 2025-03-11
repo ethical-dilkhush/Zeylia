@@ -24,15 +24,6 @@
   z-index: -1;
 }
 
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0px 1px;
-  transform: scale(1);
-  transition: transform 0.3s ease;
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -71,60 +62,6 @@
   justify-content: left;
 }
 
-
-
-/* Primary button merger with SwiperSlider.css */
-
-/* 
-.primary-btn i {
-  font-size: 1.5rem;
-  margin-left: 15px;
-} */
-
-/* .primary-btn {
-  display: inline-block;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  padding: 12px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(45deg, #ff5722, #ff9800);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease-out 0.6s forwards;
-} */
-
-/* .primary-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent);
-  transition: all 0.5s ease;
-} */
-/* 
-.primary-btn:hover::before {
-  left: 100%;
-} */
-
-/* .primary-btn:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-} */
-
 /* Animation Keyframes */
 @keyframes fadeInUp {
   to {
@@ -144,12 +81,6 @@
     height: 35vh;
     border-radius: 15px;
     margin-top: 5px;
-  }
-
-  .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .hero-subheading {
